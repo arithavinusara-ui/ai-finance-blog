@@ -22,8 +22,16 @@ export default function HomePage() {
           Master the latest AI tools, financial technologies, and digital strategies to build lasting wealth.
         </p>
       </section>
+    
 
       <section className="grid md:grid-cols-2 gap-8">
+        
+        {/* Article Card එක - Link එකක් ලෙස */}
+            <Link 
+              href="/posts/how-to-use-ai-tools-for-stock-analysis-2026" 
+              className="block p-6 bg-slate-900/50 border border-slate-800 hover:border-teal-500/50 rounded-2xl transition-all duration-300"
+            ></Link>
+
         {articles.map((art) => (
           <article key={art.slug} className="p-6 bg-slate-900/60 border border-slate-800 rounded-2xl hover:border-teal-500/50 transition group">
             <span className="text-xs font-semibold px-3 py-1 bg-teal-500/10 text-teal-400 rounded-full border border-teal-500/20">
