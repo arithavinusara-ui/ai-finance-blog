@@ -1,6 +1,15 @@
 import Link from 'next/link'
 
 export default function HomePage() {
+  const trendingTags = [
+    '#CryptoAI',
+    '#AlgorithmicTrading',
+    '#Fintech2026',
+    '#LLMsInFinance',
+    '#MarketAnalysis',
+    '#Automation'
+  ]
+
   const articles = [
     {
       slug: 'how-to-use-ai-tools-for-stock-analysis-2026',
@@ -30,6 +39,19 @@ export default function HomePage() {
         <p className="text-slate-400 max-w-2xl mx-auto text-base sm:text-lg font-normal leading-relaxed">
           Stay ahead of the financial curve with algorithmic market strategies, fintech trends, and modern wealth-building workflows.
         </p>
+
+        {/* Trending Tags Section */}
+        <div className="pt-4 flex flex-wrap items-center justify-center gap-2">
+          <span className="text-xs font-bold text-slate-500 uppercase tracking-wider mr-2">Trending:</span>
+          {trendingTags.map((tag) => (
+            <span
+              key={tag}
+              className="text-xs font-medium px-3 py-1 bg-slate-800/60 hover:bg-teal-500/10 hover:text-teal-300 text-slate-400 rounded-full border border-slate-700/50 hover:border-teal-500/30 transition-all duration-300 cursor-pointer"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
       </section>
 
       {/* Featured Main Article Section */}
@@ -96,6 +118,33 @@ export default function HomePage() {
           </div>
         </section>
       )}
+
+      {/* Newsletter Subscription Card */}
+      <section className="relative p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-slate-900 via-indigo-950/40 to-slate-900 border border-slate-800/80 text-center space-y-6 overflow-hidden shadow-2xl">
+        <div className="absolute -bottom-12 -right-12 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="relative z-10 max-w-xl mx-auto space-y-3">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white">
+            Stay Updated with <span className="text-teal-400">FinTechPulse Insights</span>
+          </h2>
+          <p className="text-slate-400 text-sm sm:text-base">
+            Get the latest algorithmic trading strategies, AI tools, and fintech analysis delivered straight to your inbox.
+          </p>
+          <form className="pt-2 flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onSubmit={(e) => e.preventDefault()}>
+            <input
+              type="email"
+              placeholder="Enter your email address..."
+              className="flex-1 px-4 py-3 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-teal-400 transition-colors"
+            />
+            <button
+              type="submit"
+              className="px-6 py-3 bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-sm rounded-xl transition-all duration-300 shadow-lg shadow-teal-500/20 hover:scale-[1.02]"
+            >
+              Subscribe
+            </button>
+          </form>
+          <p className="text-xs text-slate-500">No spam. Unsubscribe at any time.</p>
+        </div>
+      </section>
     </div>
   )
 }
