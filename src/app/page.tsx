@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function HomePage() {
   const articles = [
     {
-      slug: 'how-to-use-ai-tools-for-stock-analysis-2026',
+      slug: 'how-to-use-ai-tools-for-stock-analysis-2026', // (how-to-use-ai-tools-for-stock-analysis-2026)
       title: 'How to Use AI Tools to Automate Stock & Crypto Market Analysis in 2026',
       excerpt: 'Discover how modern AI algorithms and natural language processing can analyze market trends in real-time.',
       category: 'AI Tools',
