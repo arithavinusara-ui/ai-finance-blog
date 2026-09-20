@@ -22,32 +22,30 @@ export default function HomePage() {
           Master the latest AI tools, financial technologies, and digital strategies to build lasting wealth.
         </p>
       </section>
-    
 
       <section className="grid md:grid-cols-2 gap-8">
-        
-        {/* Article Card එක - Link එකක් ලෙස */}
-            <Link 
-              href="/posts/how-to-use-ai-tools-for-stock-analysis-2026" 
-              className="block p-6 bg-slate-900/50 border border-slate-800 hover:border-teal-500/50 rounded-2xl transition-all duration-300"
-            ></Link>
-
         {articles.map((art) => (
-          <article key={art.slug} className="p-6 bg-slate-900/60 border border-slate-800 rounded-2xl hover:border-teal-500/50 transition group">
-            <span className="text-xs font-semibold px-3 py-1 bg-teal-500/10 text-teal-400 rounded-full border border-teal-500/20">
-              {art.category}
-            </span>
-            <h2 className="text-2xl font-bold mt-4 text-white group-hover:text-teal-300 transition">
-              <Link href={`/posts/${art.slug}`}>{art.title}</Link>
-            </h2>
-            <p className="text-slate-400 mt-2 text-sm leading-relaxed">
-              {art.excerpt}
-            </p>
-            <div className="mt-6 flex items-center justify-between text-xs text-slate-500">
-              <span>{art.date}</span>
-              <span>{art.readTime}</span>
-            </div>
-          </article>
+          <Link
+            key={art.slug}
+            href={`/posts/${art.slug}`}
+            className="block p-6 bg-slate-900/60 border border-slate-800 rounded-2xl hover:border-teal-500/50 transition group cursor-pointer"
+          >
+            <article>
+              <span className="text-xs font-semibold px-3 py-1 bg-teal-500/10 text-teal-400 rounded-full border border-teal-500/20">
+                {art.category}
+              </span>
+              <h2 className="text-2xl font-bold mt-4 text-white group-hover:text-teal-300 transition">
+                {art.title}
+              </h2>
+              <p className="text-slate-400 mt-2 text-sm leading-relaxed">
+                {art.excerpt}
+              </p>
+              <div className="mt-6 flex items-center justify-between text-xs text-slate-500">
+                <span>{art.date}</span>
+                <span>{art.readTime}</span>
+              </div>
+            </article>
+          </Link>
         ))}
       </section>
     </div>
