@@ -1,7 +1,7 @@
 'use client'
 
 import CategoryFilter from './CategoryFilter'
-
+import MarketSentiment from './MarketSentiment'
 import Link from 'next/link'
 
 export default function HomePage() {
@@ -79,7 +79,7 @@ export default function HomePage() {
       </section>
 
       {/* Market Sentiment Gauge Bar */}
-      
+      <MarketSentiment />
 
       {/* Category Filter Tabs */}
       <CategoryFilter />
