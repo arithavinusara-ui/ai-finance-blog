@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -37,6 +38,7 @@ export default function RootLayout({
         <footer className="border-t border-slate-800 bg-slate-900/30 py-8 mt-12 text-center text-slate-500 text-sm">
           © 2026 FinTechPulse. All rights reserved. Built for Next-Gen Finance & AI.
         </footer>
+        <SpeedInsights />
       </body>
     </html>
   )
