@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from './Navbar' // නැතහොත් Navbar file එක තියෙන path එක
 import Footer from './Footer'
+import Ticker from './Ticker'
 
 const inter = Inter({ subsets: ['latin'] })
 
