@@ -12,6 +12,13 @@ export default function HomePage() {
     '#Automation'
   ]
 
+  const stats = [
+    { label: 'Market Reports', value: '150+' },
+    { label: 'AI Models Tracked', value: '24/7' },
+    { label: 'Active Readers', value: '50K+' },
+    { label: 'Accuracy Rating', value: '98.4%' },
+  ]
+
   const articles = [
     {
       slug: 'how-to-use-ai-tools-for-stock-analysis-2026',
@@ -29,7 +36,7 @@ export default function HomePage() {
 
   return (
     <div className="space-y-16 py-6 transition-all duration-500">
-      {/* Modern Hero Section */}
+      {/* Hero Section */}
       <section className="text-center space-y-6 py-12 px-4 relative overflow-hidden rounded-3xl bg-gradient-to-b from-slate-900/80 via-slate-900/30 to-transparent border border-slate-800/50 backdrop-blur-sm">
         <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
         <span className="inline-block px-4 py-1.5 bg-teal-500/10 text-teal-400 text-xs font-semibold rounded-full border border-teal-500/20 tracking-wide uppercase">
@@ -42,7 +49,7 @@ export default function HomePage() {
           Stay ahead of the financial curve with algorithmic market strategies, fintech trends, and modern wealth-building workflows.
         </p>
 
-        {/* Trending Tags Section */}
+        {/* Trending Tags */}
         <div className="pt-4 flex flex-wrap items-center justify-center gap-2">
           <span className="text-xs font-bold text-slate-500 uppercase tracking-wider mr-2">Trending:</span>
           {trendingTags.map((tag) => (
@@ -56,9 +63,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Main Article Section */}
+      {/* Market Stats Grid */}
+      <section className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {stats.map((stat) => (
+          <div
+            key={stat.label}
+            className="p-6 rounded-2xl bg-slate-900/40 border border-slate-800/70 text-center space-y-1 hover:border-teal-500/30 transition-colors"
+          >
+            <div className="text-2xl sm:text-3xl font-extrabold text-teal-400 font-mono">{stat.value}</div>
+            <div className="text-xs text-slate-400 font-medium">{stat.label}</div>
+          </div>
+        ))}
+      </section>
+
+      {/* Featured Main Article */}
       {featuredPost && (
-        <section className="space-y-4">
+        <section id="featured" className="space-y-4">
           <div className="flex items-center gap-2">
             <span className="h-2 w-2 rounded-full bg-teal-400 animate-pulse"></span>
             <h2 className="text-xs font-bold uppercase tracking-widest text-slate-400">Featured Insight</h2>
@@ -91,7 +111,7 @@ export default function HomePage() {
 
       {/* Regular Articles Grid */}
       {regularPosts.length > 0 && (
-        <section className="space-y-6">
+        <section id="latest" className="space-y-6">
           <h2 className="text-xs font-bold uppercase tracking-widest text-slate-400">Latest Stories</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {regularPosts.map((art) => (

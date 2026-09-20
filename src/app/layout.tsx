@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from './Navbar' // නැතහොත් Navbar file එක තියෙන path එක
+import Footer from './Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
