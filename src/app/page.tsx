@@ -1,5 +1,7 @@
 'use client'
+
 import CategoryFilter from './CategoryFilter'
+
 import Link from 'next/link'
 
 export default function HomePage() {
@@ -76,6 +78,12 @@ export default function HomePage() {
         ))}
       </section>
 
+      {/* Market Sentiment Gauge Bar */}
+      
+
+      {/* Category Filter Tabs */}
+      <CategoryFilter />
+
       {/* Featured Main Article */}
       {featuredPost && (
         <section id="featured" className="space-y-4">
@@ -108,23 +116,6 @@ export default function HomePage() {
           </Link>
         </section>
       )}
-
-   export default function Home() 
-      return (
-      <main className="py-8">
-      {/* Hero / Main Section */}
-      
-      {/* Category Filter Component */}
-      <CategoryFilter />
-
-      {/* Articles Grid Section */}
-    </main>
-      )
-
-
-
-
-
 
       {/* Regular Articles Grid */}
       {regularPosts.length > 0 && (
