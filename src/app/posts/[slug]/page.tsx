@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import { compileMDX } from 'next-mdx-remote/rsc'
 import { notFound } from 'next/navigation'
+import ReadingProgressBar from '@/app/ReadingProgressBar' // ReadingProgressBar එක මෙතැනින් Import කර ඇත
 
 interface PageProps {
   params: Promise<{
@@ -41,7 +42,10 @@ export default async function PostPage({ params }: PageProps) {
   })
 
   return (
-    <article className="max-w-3xl mx-auto py-12 px-4 space-y-6">
+    <article className="max-w-3xl mx-auto py-12 px-4 space-y-6 relative">
+      {/* ලිපිය කියවන පිටුවට පමණක් පෙනෙන ප්‍රගති තීරුව (Reading Progress Bar) */}
+      <ReadingProgressBar />
+
       <header className="space-y-4 border-b border-slate-800 pb-8">
         <span className="text-xs font-semibold px-3 py-1 bg-teal-500/10 text-teal-400 rounded-full border border-teal-500/20">
           {frontmatter.category}
