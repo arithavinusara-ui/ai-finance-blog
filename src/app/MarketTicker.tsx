@@ -70,19 +70,18 @@ export default function MarketTicker() {
     return () => clearInterval(interval)
   }, [])
 
-  return (
-    <div className="bg-slate-950 border-b border-slate-800 text-xs py-2 px-4 overflow-x-auto whitespace-nowrap scrollbar-none">
-      <div className="max-w-7xl mx-auto flex items-center justify-between space-x-8">
-        {marketData.map((item, index) => (
-          <div key={index} className="flex items-center space-x-2">
+ return (
+    <div className="bg-slate-950 border-b border-slate-800 text-xs py-2 overflow-hidden relative">
+      <div className="animate-ticker flex space-x-12">
+        {/* දත්ත ලැයිස්තුව දෙපාරක් render කිරීම මඟින් smooth loop එකක් ලැබේ */}
+        {[...marketData, ...marketData].map((item, index) => (
+          <div key={index} className="flex items-center space-x-2 shrink-0">
             <span className="font-semibold text-slate-300">{item.symbol}</span>
             <span className="text-white font-medium">{item.price}</span>
             <span className={item.isPositive ? 'text-emerald-400' : 'text-rose-400'}>
               {item.change}
             </span>
-            {index < marketData.length - 1 && (
-              <span className="text-slate-800 ml-4">|</span>
-            )}
+            <span className="text-slate-800 ml-4">|</span>
           </div>
         ))}
       </div>
