@@ -1,4 +1,4 @@
-import Ticker from 'src/app/MarketTicker' // Ticker එක තියෙන path එකට අනුව මෙය වෙනස් කරගන්න 
+import Ticker from './MarketTicker' // Ticker එක තියෙන path එකට අනුව මෙය වෙනස් කරගන්න 
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
