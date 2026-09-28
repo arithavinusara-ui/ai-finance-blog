@@ -79,8 +79,8 @@ export default function HomePage() {
       </section>
 
  
-    <main className="bg-slate-950 text-white p-3">
-      <div className="flex justify-between items-center mb-2">
+    <main className="bg-slate-950 text-white p-2">
+      <div className="flex justify-between items-center mb-1">
         <h1 className="text-2xl font-bold text-white">FinTechPulse Dashboard</h1>
         <Link 
           href="/tools" 
