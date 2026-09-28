@@ -1,23 +1,32 @@
-import { NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
+import { NextResponse } from 'next/server'
+import { PrismaClient } from '@prisma/client'
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient()
 
 export async function POST(request: Request) {
   try {
-    const { email } = await request.json();
+    const { email } = await request.json()
 
-    if (!email) {
-      return NextResponse.json({ error: 'ඊමේල් ලිපිනයක් ලබා දෙන්න' }, { status: 400 });
+    if (!email || !email.includes('@')) {
+      return NextResponse.json({ error: 'Please provide a valid email address.' }, { status: 400 })
     }
 
-    // ඩේටාබේස් එකට ඊමේල් එක සේව් කිරීම
-    const newSubscriber = await prisma.subscriber.create({
-      data: { email },
-    });
+    // Check if email already exists
+    const existingSubscriber = await prisma.subscriber.findUnique({
+      where: { email },
+    })
 
-    return NextResponse.json({ message: 'සාර්ථකව සබ්ස්ක්‍රයිබ් විය!', newSubscriber }, { status: 201 });
+    if (existingSubscriber) {
+      return NextResponse.json({ error: 'This email is already subscribed.' }, { status: 400 })
+    }
+
+    // Save to database
+    await prisma.subscriber.create({
+      data: { email },
+    })
+
+    return NextResponse.json({ message: 'Successfully subscribed!' }, { status: 200 })
   } catch (error) {
-    return NextResponse.json({ error: 'මෙම ඊමේල් ලිපිනය දැනටමත් පවතී හෝ දෝෂයක් සිදු විය.' }, { status: 500 });
+    return NextResponse.json({ error: 'Something went wrong. Please try again.' }, { status: 500 })
   }
 }
