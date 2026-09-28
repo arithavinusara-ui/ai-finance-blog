@@ -92,7 +92,15 @@ export default function HomePage() {
       </section>
 
       {/* වෙළඳපල මනෝභාව මීටරය (Market Sentiment Meter) */}
+      export default function Home() 
+         return (
+    <div className="space-y-8 py-6">
+      {/* අනෙකුත් අංගයන් */}
+      
+      {/* මෙන්න මෙතැනට Market Sentiment Gauge එක එකතු කරන්න */}
       <MarketSentiment />
+    </div>
+    )
 
       {/* කාණ්ඩ පෙරහන සහ සෙවුම් තීරුව (Category Filter & Search Bar) */}
       <CategoryFilter
