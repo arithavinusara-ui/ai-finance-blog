@@ -1,5 +1,5 @@
 'use client'
-import CurrencyConverter from './CurrencyConverter'
+import CurrencyConverter from './tools/CurrencyConverter'
 import { useState } from 'react'
 import CategoryFilter from './CategoryFilter'
 import MarketSentiment from './MarketSentiment'
