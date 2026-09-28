@@ -5,16 +5,6 @@ import CategoryFilter from './CategoryFilter'
 import MarketSentiment from './MarketSentiment'
 import Link from 'next/link'
 
-// Home Page එක ඇතුළේ මෙგඩින් Link එකක් දාන්න පුළුවන්:
-<div className="flex justify-between items-center mb-6">
-  <h1 className="text-2xl font-bold text-white">FinTechPulse Dashboard</h1>
-  <Link 
-    href="/tools" 
-    className="bg-teal-500/10 border border-teal-500/30 text-teal-400 px-4 py-2 rounded-xl text-sm font-semibold hover:bg-teal-500/20 transition"
-  >
-    Open Tools & Calculators →
-  </Link>
-</div>
 
 export default function HomePage() {
   // සෙවුම් පද සහ ක්‍රියාකාරී කාණ්ඩය සඳහා State කළමනාකරණය
@@ -88,6 +78,21 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+  <main className="min-h-screen bg-slate-950 text-white p-6">
+      {/* දැන් මෙම Button එක සහ Header එක return එක ඇතුළේ නිවැරදිව ඇත */}
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-2xl font-bold text-white">FinTechPulse Dashboard</h1>
+        <Link 
+          href="/tools" 
+          className="bg-teal-500/10 border border-teal-500/30 text-teal-400 px-4 py-2 rounded-xl text-sm font-semibold hover:bg-teal-500/20 transition"
+        >
+          Open Tools & Calculators →
+        </Link>
+      </div>
+
+      {/* අනෙකුත් අංගයන් මෙහි දිගටම එකතු කරන්න */}
+    </main>
 
       {/* වෙළඳපල සංඛ්‍යාලේඛන කොටස (Market Stats Grid) */}
       <section className="grid grid-cols-2 md:grid-cols-4 gap-4">
