@@ -17,6 +17,7 @@ export default function ToolsPage() {
         {/* Tools Components */}
         <CurrencyConverter />
         <ProfitCalculator />
+        <MarketSentiment />
       </div>
     </main>
   )
