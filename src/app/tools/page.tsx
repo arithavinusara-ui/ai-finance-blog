@@ -1,5 +1,6 @@
 import CurrencyConverter from './CurrencyConverter'
 import ProfitCalculator from './ProfitCalculator'
+import MarketSentiment from './MarketSentiment'
 
 export default function ToolsPage() {
   return (
