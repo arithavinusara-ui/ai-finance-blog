@@ -78,9 +78,9 @@ export default function HomePage() {
         </div>
       </section>
 
-  // 'min-h-screen' වෙනුවට මෙලෙස වෙනස් කරන්න
-    <main className="bg-slate-950 text-white p-6">
-      <div className="flex justify-between items-center mb-6">
+ 
+    <main className="bg-slate-950 text-white p-3">
+      <div className="flex justify-between items-center mb-2">
         <h1 className="text-2xl font-bold text-white">FinTechPulse Dashboard</h1>
         <Link 
           href="/tools" 
