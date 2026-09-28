@@ -9,10 +9,14 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@prisma/client": "^7.10.0",
     "@tailwindcss/typography": "^0.5.20",
+    "db": "^6.0.3",
     "gray-matter": "^4.0.3",
     "next": "16.3.5",
     "next-mdx-remote": "^6.0.0",
+    "npx": "^10.2.2",
+    "push": "^0.1.0",
     "react": "19.2.8",
     "react-dom": "19.2.8"
   },
@@ -23,6 +27,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.3.5",
+    "prisma": "^8.0.0-rc.17",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
