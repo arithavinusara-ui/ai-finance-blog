@@ -1,4 +1,5 @@
 'use client'
+import MarketSentiment from './MarketSentiment'
 import { useState } from 'react'
 import CategoryFilter from './CategoryFilter'
 import Link from 'next/link'
@@ -91,6 +92,8 @@ export default function HomePage() {
 
       {/* අනෙකුත් අංගයන් මෙහි දිගටම එකතු කරන්න */}
     </main>
+
+  <MarketSentiment/>
 
       {/* වෙළඳපල සංඛ්‍යාලේඛන කොටස (Market Stats Grid) */}
       <section className="grid grid-cols-2 md:grid-cols-4 gap-4">
