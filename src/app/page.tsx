@@ -10,6 +10,32 @@ export default function HomePage() {
   const [activeCategory, setActiveCategory] = useState('All')
   const [searchQuery, setSearchQuery] = useState('')
 
+  // Newsletter email saha status සඳහා State එකතු කිරීම
+  const [email, setEmail] = useState('')
+  const [status, setStatus] = useState('')
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setStatus('Loading...')
+
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      })
+
+      if (res.ok) {
+        setStatus('Successfully subscribed!')
+        setEmail('')
+      } else {
+        setStatus('Something went wrong.')
+      }
+    } catch (err) {
+      setStatus('Error connecting to server.')
+    }
+  }
+
   const trendingTags = [
     '#CryptoAI',
     '#AlgorithmicTrading',
@@ -200,10 +226,13 @@ export default function HomePage() {
           <p className="text-slate-400 text-sm sm:text-base">
             Get the latest algorithmic trading strategies, AI tools, and fintech analysis delivered straight to your inbox.
           </p>
-          <form className="pt-2 flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onSubmit={(e) => e.preventDefault()}>
+          <form className="pt-2 flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onSubmit={handleSubscribe}>
             <input
               type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email address..."
+              required
               className="flex-1 px-4 py-3 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-teal-400 transition-colors"
             />
             <button
@@ -213,6 +242,7 @@ export default function HomePage() {
               Subscribe
             </button>
           </form>
+          {status && <p className="text-sm text-teal-400 mt-2 font-medium">{status}</p>}
           <p className="text-xs text-slate-500">No spam. Unsubscribe at any time.</p>
         </div>
       </section>
