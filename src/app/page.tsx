@@ -78,8 +78,8 @@ export default function HomePage() {
         </div>
       </section>
 
-  <main className="min-h-screen bg-slate-950 text-white p-6">
-      {/* දැන් මෙම Button එක සහ Header එක return එක ඇතුළේ නිවැරදිව ඇත */}
+  // 'min-h-screen' වෙනුවට මෙලෙස වෙනස් කරන්න
+    <main className="bg-slate-950 text-white p-6">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold text-white">FinTechPulse Dashboard</h1>
         <Link 
@@ -89,7 +89,6 @@ export default function HomePage() {
           Open Tools & Calculators →
         </Link>
       </div>
-
       {/* අනෙකුත් අංගයන් මෙහි දිගටම එකතු කරන්න */}
     </main>
 
