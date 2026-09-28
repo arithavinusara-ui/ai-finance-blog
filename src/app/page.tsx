@@ -1,5 +1,5 @@
 'use client'
-
+import CurrencyConverter from './CurrencyConverter'
 import { useState } from 'react'
 import CategoryFilter from './CategoryFilter'
 import MarketSentiment from './MarketSentiment'
@@ -92,7 +92,6 @@ export default function HomePage() {
       </section>
 
       {/* වෙළඳපල මනෝභාව මීටරය (Market Sentiment Meter) */}
-       
     <div className="space-y-8 py-6">
       {/* අනෙකුත් අංගයන් */}
       
@@ -101,6 +100,8 @@ export default function HomePage() {
     </div>
     
 
+    <CurrencyConverter /> 
+ 
       {/* කාණ්ඩ පෙරහන සහ සෙවුම් තීරුව (Category Filter & Search Bar) */}
       <CategoryFilter
         activeCategory={activeCategory}
