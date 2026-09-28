@@ -3,9 +3,10 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql" // නැතහොත් ඔබ භාවිතා කරන ඩේටාබේස් වර්ගය
+  provider = "postgresql" 
   url      = env("DATABASE_URL")
 }
+
 
 model Subscriber {
   id        String   @id @default(uuid())
