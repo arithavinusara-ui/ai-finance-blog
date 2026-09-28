@@ -26,7 +26,8 @@ export async function POST(request: Request) {
     })
 
     return NextResponse.json({ message: 'Successfully subscribed!' }, { status: 200 })
-  } catch (error) {
-    return NextResponse.json({ error: 'Something went wrong. Please try again.' }, { status: 500 })
+  } catch (error: any) {
+    console.error("DETAILED SUBSCRIBE ERROR:", error) // මේකෙන් Vercel ලොග්ස් වලට හරියටම එරර් එක වැටේවි
+    return NextResponse.json({ error: error.message || 'Something went wrong. Please try again.' }, { status: 500 })
   }
 }
