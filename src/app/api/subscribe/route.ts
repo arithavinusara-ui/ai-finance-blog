@@ -1,21 +1,23 @@
 import { NextResponse } from 'next/server';
+import { PrismaClient } from '@prisma/client';
+
+const prisma = new PrismaClient();
 
 export async function POST(request: Request) {
   try {
     const { email } = await request.json();
 
-    if (!email || !email.includes('@')) {
-      return NextResponse.json({ error: 'Invalid email' }, { status: 400 });
+    if (!email) {
+      return NextResponse.json({ error: 'ඊමේල් ලිපිනයක් ලබා දෙන්න' }, { status: 400 });
     }
 
-    // මෙතැනදී නරඹන්නා දුන් ඊමේල් එක ටර්මිනල් එකේ පින්ට් වෙනවා (Test කරලා බලන්න පුළුවන්)
-    console.log('New subscriber email:', email);
+    // ඩේටාබේස් එකට ඊමේල් එක සේව් කිරීම
+    const newSubscriber = await prisma.subscriber.create({
+      data: { email },
+    });
 
-    // ඉදිරියට මෙතැනට Database එකකට (MongoDB හෝ Supabase වගේ එකකට) 
-    // මේ ඊමේල් එක save කරගන්න කෝඩ් එක දාන්න පුළුවන්.
-
-    return NextResponse.json({ success: true, message: 'Subscribed successfully' });
+    return NextResponse.json({ message: 'සාර්ථකව සබ්ස්ක්‍රයිබ් විය!', newSubscriber }, { status: 201 });
   } catch (error) {
-    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+    return NextResponse.json({ error: 'මෙම ඊමේල් ලිපිනය දැනටමත් පවතී හෝ දෝෂයක් සිදු විය.' }, { status: 500 });
   }
 }
