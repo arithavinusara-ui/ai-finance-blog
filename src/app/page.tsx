@@ -25,11 +25,13 @@ export default function HomePage() {
         body: JSON.stringify({ email }),
       })
 
+      const data = await res.json()
+
       if (res.ok) {
         setStatus('Successfully subscribed!')
         setEmail('')
       } else {
-        setStatus('Something went wrong.')
+        setStatus(data.error || 'Something went wrong.')
       }
     } catch (err) {
       setStatus('Error connecting to server.')
