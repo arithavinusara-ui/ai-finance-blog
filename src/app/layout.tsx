@@ -11,7 +11,9 @@ export const metadata: Metadata = {
   title: 'FinTechPulse | AI & Financial Insights',
   description: 'Next-Gen Insights on AI, Financial Analysis & Fintech Trends',
   icons: {
-    icon: '/logo.png', // public folder eke thiyena oyaage aluth logo file eka
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
   },
 }
 
