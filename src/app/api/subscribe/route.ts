@@ -44,7 +44,7 @@ export async function POST(request: Request) {
             
             <!-- Logo eka pennana kotasa -->
             <div style="text-align: center; margin-bottom: 20px;">
-              <img src="https://fintechpulse.vercel.app/logo.png" alt="FinTech Pulse Logo" width="100" style="display: block; margin: 0 auto; border-radius: 8px;" />
+              <img src="https://ai-finance-blog.vercel.app/logo.png" alt="FinTech Pulse Logo" width="100" style="display: block; margin: 0 auto; border-radius: 8px;" />
             </div>
 
             <h2 style="color: #4f46e5; text-align: center;">Welcome to FinTech Pulse!</h2>
