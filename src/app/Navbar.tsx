@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import Image from 'next/image' // 1. Next.js Image component එක උඩින්ම import කළා
 
 export default function Navbar() {
   const pathname = usePathname()
@@ -20,12 +21,22 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800/60 transition-all duration-300">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        {/* Animated Brand Logo */}
+        {/* Animated Brand Logo with Image */}
         <Link
           href="/"
           onClick={handleLogoClick}
-          className="group flex items-center gap-2 text-2xl font-black tracking-wider transition-transform duration-300 hover:scale-[1.02]"
+          className="group flex items-center gap-2.5 text-2xl font-black tracking-wider transition-transform duration-300 hover:scale-[1.02]"
         >
+          {/* 2. මෙන්න මෙතනට ඔයාගේ අලුත් logo.png එක එකතු කළා */}
+          <div className="relative w-9 h-9 overflow-hidden rounded-lg">
+            <Image 
+              src="/logo.png" 
+              alt="FinTech Pulse Logo" 
+              fill 
+              className="object-contain"
+            />
+          </div>
+
           <span className="bg-gradient-to-r from-blue-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent group-hover:from-teal-300 group-hover:to-blue-400 transition-all duration-500">
             FinTech
           </span>

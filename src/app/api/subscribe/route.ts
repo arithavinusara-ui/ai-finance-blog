@@ -33,7 +33,7 @@ export async function POST(request: Request) {
       },
     })
 
-    // Send professional Welcome Email in English for AI & Finance
+    // Send professional Welcome Email in English for AI & Finance with Logo
     try {
       await resend.emails.send({
         from: 'FinTech Pulse <onboarding@resend.dev>',
@@ -41,6 +41,12 @@ export async function POST(request: Request) {
         subject: 'Welcome to FinTech Pulse! 🎉',
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #333; background-color: #f9fafb; border-radius: 8px;">
+            
+            <!-- Logo eka pennana kotasa -->
+            <div style="text-align: center; margin-bottom: 20px;">
+              <img src="https://fintechpulse.vercel.app/logo.png" alt="FinTech Pulse Logo" width="100" style="display: block; margin: 0 auto; border-radius: 8px;" />
+            </div>
+
             <h2 style="color: #4f46e5; text-align: center;">Welcome to FinTech Pulse!</h2>
             <p>Hello,</p>
             <p>Thank you for subscribing to our platform! We are thrilled to have you on board.</p>
