@@ -15,6 +15,28 @@ export const metadata: Metadata = {
     shortcut: '/logo.png',
     apple: '/logo.png',
   },
+  openGraph: {
+    title: 'FinTechPulse | AI & Financial Insights',
+    description: 'Next-Gen Insights on AI, Financial Analysis & Fintech Trends',
+    url: 'https://ai-finance-blog.vercel.app',
+    siteName: 'FinTechPulse',
+    images: [
+      {
+        url: 'https://ai-finance-blog.vercel.app/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'FinTechPulse Logo',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'FinTechPulse | AI & Financial Insights',
+    description: 'Next-Gen Insights on AI, Financial Analysis & Fintech Trends',
+    images: ['https://ai-finance-blog.vercel.app/logo.png'],
+  },
 }
 
 export default function RootLayout({
