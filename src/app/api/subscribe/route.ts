@@ -1,7 +1,9 @@
 import { NextResponse } from 'next/server'
 import { PrismaClient } from '@prisma/client'
+import { Resend } from 'resend'
  
 const prisma = new PrismaClient()
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(request: Request) {
   try {
@@ -30,6 +32,29 @@ export async function POST(request: Request) {
         createdAt: lankaTime, // මෙතනට ලංකාවේ වෙලාව හරියටම යනවා
       },
     })
+
+    // Send professional Welcome Email in English for AI & Finance
+    try {
+      await resend.emails.send({
+        from: 'AI & Finance <onboarding@resend.dev>',
+        to: [email],
+        subject: 'Welcome to AI & Finance! 🎉',
+        html: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #333; background-color: #f9fafb; border-radius: 8px;">
+            <h2 style="color: #4f46e5; text-align: center;">Welcome to AI & Finance!</h2>
+            <p>Hello,</p>
+            <p>Thank you for subscribing to our platform! We are thrilled to have you on board.</p>
+            <p>By subscribing, you will be the first to explore our latest articles, insights on artificial intelligence and finance, and upcoming interactive tools designed to bring you immense value.</p>
+            <p>Stay tuned for exciting updates coming your way very soon!</p>
+            <br/>
+            <p>Best regards,</p>
+            <p><strong>The AI & Finance Team</strong></p>
+          </div>
+        `,
+      });
+    } catch (emailError) {
+      console.error("EMAIL SENDING ERROR:", emailError);
+    }
 
     return NextResponse.json({ message: 'Successfully subscribed!' }, { status: 200 })
   } catch (error: any) {
