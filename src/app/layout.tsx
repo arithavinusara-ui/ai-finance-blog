@@ -8,8 +8,8 @@ import Footer from './Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'FinTechPulse | AI & Financial Insights',
-  description: 'Next-Gen Insights on AI, Financial Analysis & Fintech Trends',
+  title: 'FinTechPulse | Next-Gen AI & Financial Insights Platform',
+ description: 'Discover comprehensive, next-gen insights on artificial intelligence, advanced financial analysis, and the latest evolving fintech market trends.',
   icons: {
     icon: '/logo.png',
     shortcut: '/logo.png',
