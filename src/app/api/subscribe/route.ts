@@ -36,19 +36,19 @@ export async function POST(request: Request) {
     // Send professional Welcome Email in English for AI & Finance
     try {
       await resend.emails.send({
-        from: 'AI & Finance <onboarding@resend.dev>',
+        from: 'FinTech Pulse <onboarding@resend.dev>',
         to: [email],
-        subject: 'Welcome to AI & Finance! 🎉',
+        subject: 'Welcome to FinTech Pulse! 🎉',
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #333; background-color: #f9fafb; border-radius: 8px;">
-            <h2 style="color: #4f46e5; text-align: center;">Welcome to AI & Finance!</h2>
+            <h2 style="color: #4f46e5; text-align: center;">Welcome to FinTech Pulse!</h2>
             <p>Hello,</p>
             <p>Thank you for subscribing to our platform! We are thrilled to have you on board.</p>
             <p>By subscribing, you will be the first to explore our latest articles, insights on artificial intelligence and finance, and upcoming interactive tools designed to bring you immense value.</p>
             <p>Stay tuned for exciting updates coming your way very soon!</p>
             <br/>
             <p>Best regards,</p>
-            <p><strong>The AI & Finance Team</strong></p>
+            <p><strong>The FinTech Pulse Team</strong></p>
           </div>
         `,
       });
