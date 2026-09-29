@@ -20,9 +20,15 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'This email is already subscribed.' }, { status: 400 })
     }
 
-    // Save to database
+    // ලංකාවේ හරියටම වෙලාව (Asia/Colombo) ලබාගැනීම
+    const lankaTime = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Colombo" }));
+
+    // Save to database with local Sri Lankan time
     await prisma.subscriber.create({
-      data: { email },
+      data: { 
+        email,
+        createdAt: lankaTime, // මෙතනට ලංකාවේ වෙලාව හරියටම යනවා
+      },
     })
 
     return NextResponse.json({ message: 'Successfully subscribed!' }, { status: 200 })
