@@ -8,7 +8,7 @@ generator client {
 }
 
 model Subscriber {
-  id        Int      @id @default(autoincrement())
+  id        String   @id @default(uuid())
   email     String   @unique
   createdAt DateTime @default(now())
 }
