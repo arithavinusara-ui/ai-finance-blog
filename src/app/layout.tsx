@@ -9,15 +9,19 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'FinTechPulse | Next-Gen AI & Financial Insights Platform',
- description: 'Discover comprehensive, next-gen insights on artificial intelligence, advanced financial analysis, and the latest evolving fintech market trends.',
+  description: 'Discover comprehensive, next-gen insights on artificial intelligence, advanced financial analysis, and the latest evolving fintech market trends.',
+  // alternatives වල canonical එක
+  alternates: {
+    canonical: 'https://ai-finance-blog.vercel.app',
+  },
   icons: {
     icon: '/logo.png',
     shortcut: '/logo.png',
     apple: '/logo.png',
   },
   openGraph: {
-    title: 'FinTechPulse | AI & Financial Insights',
-    description: 'Next-Gen Insights on AI, Financial Analysis & Fintech Trends',
+    title: 'FinTechPulse | Next-Gen AI & Financial Insights Platform',
+    description: 'Discover comprehensive, next-gen insights on artificial intelligence, advanced financial analysis, and the latest evolving fintech market trends.',
     url: 'https://ai-finance-blog.vercel.app',
     siteName: 'FinTechPulse',
     images: [
@@ -33,8 +37,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'FinTechPulse | AI & Financial Insights',
-    description: 'Next-Gen Insights on AI, Financial Analysis & Fintech Trends',
+    title: 'FinTechPulse | Next-Gen AI & Financial Insights Platform',
+    description: 'Discover comprehensive, next-gen insights on artificial intelligence, advanced financial analysis, and the latest evolving fintech market trends.',
     images: ['https://ai-finance-blog.vercel.app/logo.png'],
   },
 }
@@ -46,6 +50,25 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        {/* Schema.org Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "FinTechPulse",
+              "url": "https://ai-finance-blog.vercel.app",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://ai-finance-blog.vercel.app/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            }),
+          }}
+        />
+      </head>
       <body className={`${inter.className} bg-slate-950 text-slate-100 min-h-screen antialiased selection:bg-teal-500 selection:text-slate-950`}>
         <Ticker />
         <Navbar />
