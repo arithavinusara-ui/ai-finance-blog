@@ -70,9 +70,28 @@ export default function HomePage() {
       excerpt: 'Discover how modern AI algorithms and predictive models are reshaping everyday budgeting, savings, and personal wealth strategies.',
       category: 'AI Insights',
       date: 'Oct 2, 2026',
-      readTime: '4 min read',
+      readTime: '5 min read',
       featured: false,
-    }
+    },
+    {
+      slug: 'crypto-market-sentiment-analysis-2026',
+      title: 'Decoding Crypto Market Sentiment: How On-Chain Data and AI Predict Price Swings',
+      excerpt: 'Explore how advanced on-chain analytics and machine learning models decode investor sentiment to predict major crypto market trends.',
+      category: 'Crypto Analysis',
+      date: 'Oct 3, 2026',
+      readTime: '5 min read',
+      featured: false,
+    },
+    
+      
+
+
+
+    
+
+
+
+    
   ]
 
   // සෙවුම් පදය සහ Category එක අනුව ලිපි පෙරහන් කිරීම (Filtering Logic)
