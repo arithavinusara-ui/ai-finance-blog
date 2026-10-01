@@ -85,16 +85,6 @@ export default function HomePage() {
       featured: false,
       image: "/crypto-market-sentiment-analysis.png"
     },
-    
-      
-
-
-
-    
-
-
-
-    
   ]
 
   // සෙවුම් පදය සහ Category එක අනුව ලිපි පෙරහන් කිරීම (Filtering Logic)
@@ -193,20 +183,31 @@ export default function HomePage() {
                 className="group relative block p-8 rounded-3xl bg-slate-900/40 border border-slate-800/80 hover:border-teal-500/40 transition-all duration-500 hover:shadow-2xl hover:shadow-teal-500/10 hover:-translate-y-1 overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-teal-500/5 via-transparent to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="relative z-10 space-y-4">
-                  <span className="inline-block text-xs font-semibold px-3 py-1 bg-teal-500/10 text-teal-400 rounded-full border border-teal-500/20">
-                    {featuredPost.category}
-                  </span>
-                  <h3 className="text-2xl sm:text-4xl font-bold text-white group-hover:text-teal-300 transition-colors duration-300">
-                    {featuredPost.title}
-                  </h3>
-                  <p className="text-slate-400 text-sm sm:text-base leading-relaxed max-w-3xl">
-                    {featuredPost.excerpt}
-                  </p>
-                  <div className="flex items-center gap-4 text-xs text-slate-500 pt-4 border-t border-slate-800/60">
-                    <span>{featuredPost.date}</span>
-                    <span>•</span>
-                    <span>{featuredPost.readTime}</span>
+                <div className="relative z-10 grid md:grid-cols-12 gap-6 items-center">
+                  {featuredPost.image && (
+                    <div className="md:col-span-5 overflow-hidden rounded-2xl border border-slate-800/60 aspect-video relative">
+                      <img 
+                        src={featuredPost.image} 
+                        alt={featuredPost.title}
+                        className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                  )}
+                  <div className={`${featuredPost.image ? 'md:col-span-7' : 'md:col-span-12'} space-y-4`}>
+                    <span className="inline-block text-xs font-semibold px-3 py-1 bg-teal-500/10 text-teal-400 rounded-full border border-teal-500/20">
+                      {featuredPost.category}
+                    </span>
+                    <h3 className="text-2xl sm:text-3xl font-bold text-white group-hover:text-teal-300 transition-colors duration-300">
+                      {featuredPost.title}
+                    </h3>
+                    <p className="text-slate-400 text-sm sm:text-base leading-relaxed max-w-3xl">
+                      {featuredPost.excerpt}
+                    </p>
+                    <div className="flex items-center gap-4 text-xs text-slate-500 pt-4 border-t border-slate-800/60">
+                      <span>{featuredPost.date}</span>
+                      <span>•</span>
+                      <span>{featuredPost.readTime}</span>
+                    </div>
                   </div>
                 </div>
               </Link>
@@ -222,21 +223,34 @@ export default function HomePage() {
                   <Link
                     key={art.slug}
                     href={`/posts/${art.slug}`}
-                    className="group block p-6 bg-slate-900/40 border border-slate-800/80 rounded-2xl hover:border-teal-500/40 hover:-translate-y-1 transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/5"
+                    className="group block p-6 bg-slate-900/40 border border-slate-800/80 rounded-2xl hover:border-teal-500/40 hover:-translate-y-1 transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/5 flex flex-col justify-between"
                   >
-                    <article className="space-y-3">
-                      <span className="inline-block text-xs font-semibold px-3 py-1 bg-teal-500/10 text-teal-400 rounded-full border border-teal-500/20">
-                        {art.category}
-                      </span>
-                      <h3 className="text-xl font-bold text-white group-hover:text-teal-300 transition-colors duration-300">
-                        {art.title}
-                      </h3>
-                      <p className="text-slate-400 text-sm leading-relaxed line-clamp-2">
-                        {art.excerpt}
-                      </p>
-                      <div className="flex items-center justify-between text-xs text-slate-500 pt-3">
-                        <span>{art.date}</span>
-                        <span>{art.readTime}</span>
+                    <article className="space-y-4 flex-1 flex flex-col">
+                      {art.image && (
+                        <div className="overflow-hidden rounded-xl border border-slate-800/60 aspect-video relative w-full">
+                          <img 
+                            src={art.image} 
+                            alt={art.title}
+                            className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                          />
+                        </div>
+                      )}
+                      <div className="space-y-3 flex-1 flex flex-col justify-between">
+                        <div className="space-y-2">
+                          <span className="inline-block text-xs font-semibold px-3 py-1 bg-teal-500/10 text-teal-400 rounded-full border border-teal-500/20">
+                            {art.category}
+                          </span>
+                          <h3 className="text-xl font-bold text-white group-hover:text-teal-300 transition-colors duration-300">
+                            {art.title}
+                          </h3>
+                          <p className="text-slate-400 text-sm leading-relaxed line-clamp-2">
+                            {art.excerpt}
+                          </p>
+                        </div>
+                        <div className="flex items-center justify-between text-xs text-slate-500 pt-3 border-t border-slate-800/60">
+                          <span>{art.date}</span>
+                          <span>{art.readTime}</span>
+                        </div>
                       </div>
                     </article>
                   </Link>
