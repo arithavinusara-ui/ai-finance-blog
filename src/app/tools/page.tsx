@@ -1,6 +1,7 @@
 import CurrencyConverter from './CurrencyConverter'
 import ProfitCalculator from './ProfitCalculator'
 import CompoundCalculator from './CompoundCalculator'
+import LoanCalculator from './LoanCalculator'
 
 export default function ToolsPage() {
   return (
@@ -15,6 +16,7 @@ export default function ToolsPage() {
         </div>
 
         {/* Tools Components */}
+        <LoanCalculator />
         <CompoundCalculator />
         <CurrencyConverter />
         <ProfitCalculator />
