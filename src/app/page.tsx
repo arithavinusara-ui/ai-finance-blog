@@ -63,6 +63,7 @@ export default function HomePage() {
       date: 'Sept 21, 2026',
       readTime: '5 min read',
       featured: true,
+      image: "/images/stock-ai-analysis.jpg"
     },
     {
       slug: 'ai-insights-wealth-management',
