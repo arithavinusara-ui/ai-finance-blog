@@ -4,13 +4,12 @@ import { useState } from 'react'
 import CategoryFilter from './CategoryFilter'
 import Link from 'next/link'
 
-
 export default function HomePage() {
   // සෙවුම් පද සහ ක්‍රියාකාරී කාණ්ඩය සඳහා State කළමනාකරණය
   const [activeCategory, setActiveCategory] = useState('All')
   const [searchQuery, setSearchQuery] = useState('')
 
-  // Newsletter email saha status සඳහා State එකතු කිරීම
+  // Newsletter email සහ status සඳහා State එකතු කිරීම
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState('')
 
@@ -54,6 +53,7 @@ export default function HomePage() {
     { label: 'Accuracy Rating', value: '98.4%' },
   ]
 
+  // ලිපි ලැයිස්තුව (Articles Array) - MDX ලිපි මෙහි පාලනය වේ
   const articles = [
     {
       slug: 'how-to-use-ai-tools-for-stock-analysis-2026',
@@ -63,6 +63,15 @@ export default function HomePage() {
       date: 'Sept 21, 2026',
       readTime: '5 min read',
       featured: true,
+    },
+    {
+      slug: 'ai-insights-wealth-management',
+      title: 'How Artificial Intelligence is Quietly Rewriting the Rules of Personal Wealth Management',
+      excerpt: 'Discover how modern AI algorithms and predictive models are reshaping everyday budgeting, savings, and personal wealth strategies.',
+      category: 'AI Insights',
+      date: 'Oct 2, 2026',
+      readTime: '4 min read',
+      featured: false,
     }
   ]
 
@@ -106,21 +115,19 @@ export default function HomePage() {
         </div>
       </section>
 
- 
-    <main className="bg-slate-950 text-white p-2">
-      <div className="flex justify-between items-center mb-1">
-        <h2 className="text-2xl font-bold text-white">FinTechPulse Dashboard</h2>
-        <Link 
-          href="/tools" 
-          className="bg-teal-500/10 border border-teal-500/30 text-teal-400 px-4 py-2 rounded-xl text-sm font-semibold hover:bg-teal-500/20 transition"
-        >
-          Open Tools & Calculators →
-        </Link>
-      </div>
-      {/* අනෙකුත් අංගයන් මෙහි දිගටම එකතු කරන්න */}
-    </main>
+      <main className="bg-slate-950 text-white p-2">
+        <div className="flex justify-between items-center mb-1">
+          <h2 className="text-2xl font-bold text-white">FinTechPulse Dashboard</h2>
+          <Link 
+            href="/tools" 
+            className="bg-teal-500/10 border border-teal-500/30 text-teal-400 px-4 py-2 rounded-xl text-sm font-semibold hover:bg-teal-500/20 transition"
+          >
+            Open Tools & Calculators →
+          </Link>
+        </div>
+      </main>
 
-  <MarketSentiment/>
+      <MarketSentiment/>
 
       {/* වෙළඳපල සංඛ්‍යාලේඛන කොටස (Market Stats Grid) */}
       <section className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -245,7 +252,6 @@ export default function HomePage() {
             </button>
           </form>
           {status && <p className="text-sm text-teal-400 mt-2 font-medium">{status}</p>}
-          <p className="text-xs text-slate-500">No spam. Unsubscribe at any time.</p>
         </div>
       </section>
     </div>
