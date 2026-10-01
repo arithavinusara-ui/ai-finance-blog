@@ -63,7 +63,7 @@ export default function HomePage() {
       date: 'Sept 21, 2026',
       readTime: '5 min read',
       featured: true,
-      image: "/images/stock-ai-analysis.jpg"
+      image: "/stock-ai-analysis.png",
     },
     {
       slug: 'ai-insights-wealth-management',
@@ -73,6 +73,7 @@ export default function HomePage() {
       date: 'Oct 2, 2026',
       readTime: '5 min read',
       featured: false,
+      image: "/ai-wealth-management.png"
     },
     {
       slug: 'crypto-market-sentiment-analysis-2026',
@@ -82,6 +83,7 @@ export default function HomePage() {
       date: 'Oct 3, 2026',
       readTime: '5 min read',
       featured: false,
+      image: "/crypto-market-sentiment-analysis.png"
     },
     
       
