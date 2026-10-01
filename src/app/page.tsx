@@ -73,7 +73,7 @@ export default function HomePage() {
       date: 'Oct 2, 2026',
       readTime: '5 min read',
       featured: false,
-      image: "/ai-wealth-management.png"
+      image: "/ai-wealth-management.jpg"
     },
     {
       slug: 'crypto-market-sentiment-analysis-2026',
@@ -83,7 +83,7 @@ export default function HomePage() {
       date: 'Oct 3, 2026',
       readTime: '5 min read',
       featured: false,
-      image: "/crypto-market-sentiment-analysis.png"
+      image: "/crypto-market-sentiment-analysis.jpg"
     },
   ]
 
